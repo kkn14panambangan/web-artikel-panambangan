@@ -1,4 +1,5 @@
 import './globals.css'
+import BackToTop from '../components/BackToTop'
 
 export const metadata = {
   title: 'KKM 14 PANAMBANGAN',
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
             </div>
           </div>
         </footer>
+        <BackToTop />
       </body>
     </html>
   )
