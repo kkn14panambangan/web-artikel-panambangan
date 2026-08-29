@@ -309,8 +309,16 @@ div[id*="netlify-badge"] {
   color: #fff;
 }
 
+.mobile-only {
+  display: none;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  
   .navbar-container {
     flex-direction: column;
     height: auto;

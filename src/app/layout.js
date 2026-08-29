@@ -14,7 +14,9 @@ export default function RootLayout({ children }) {
             <div className="navbar-brand">
               <img src="/logo.png" alt="Logo" width="40" height="40" style={{ borderRadius: '50%' }} />
               <div>
-                <div className="navbar-title">KKM 14 DESA PANAMBANGAN</div>
+                <div className="navbar-title">
+                  KKM 14 <br className="mobile-only" /> DESA PANAMBANGAN
+                </div>
               </div>
             </div>
             <nav className="nav-links">
