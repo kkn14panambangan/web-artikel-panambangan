@@ -364,6 +364,7 @@ div[id*="netlify-badge"] {
     flex-direction: row;
     justify-content: space-between;
     height: 70px;
+    position: relative;
   }
   
   .navbar-brand {
@@ -376,6 +377,10 @@ div[id*="netlify-badge"] {
     margin-top: 0;
     text-align: center;
     line-height: 1.2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
   }
   
   .nav-links {
