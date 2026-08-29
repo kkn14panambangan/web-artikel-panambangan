@@ -368,12 +368,14 @@ div[id*="netlify-badge"] {
   
   .navbar-brand {
     flex-direction: row;
-    text-align: left;
+    align-items: center;
   }
   
   .navbar-title {
     font-size: 14px;
     margin-top: 0;
+    text-align: center;
+    line-height: 1.2;
   }
   
   .nav-links {
