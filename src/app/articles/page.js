@@ -1,14 +1,17 @@
 import Link from 'next/link';
 
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+
 export const metadata = {
   title: 'Daftar Artikel - KKM 14 PANAMBANGAN',
 }
 
-export default function ArticlesPage() {
-  const articles = [
-    { slug: 'jahe-merah', title: 'Cara Praktis Menanam Jahe Merah di Pekarangan Rumah', date: '30 Juli 2026', desc: 'Jahe merah kaya akan manfaat kesehatan dan bernilai ekonomi. Pelajari cara menanamnya di lahan sempit dengan panduan ini.', image: 'https://images.unsplash.com/photo-1596484552735-86699ebf3994?auto=format&fit=crop&w=500&q=60' },
-    { slug: 'maggot-bsf', title: 'Panduan Awal Budidaya Maggot BSF Skala Rumahan', date: '30 Juli 2026', desc: 'Ubah sampah dapur organik menjadi pakan ternak bernutrisi tinggi dengan menggunakan larva lalat tentara hitam.', image: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=500&q=60' }
-  ];
+export default async function ArticlesPage() {
+  const articles = await prisma.article.findMany({
+    orderBy: { createdAt: 'desc' }
+  });
 
   return (
     <div className="fade-in">
@@ -31,15 +34,15 @@ export default function ArticlesPage() {
         {articles.map((article) => (
           <Link href={`/articles/${article.slug}`} key={article.slug} className="card">
             <div className="card-img-container">
-              <img src={article.image} alt={article.title} className="card-img" />
+              <img src={article.image_url || 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=500&q=60'} alt={article.title} className="card-img" />
             </div>
             <div className="card-body">
               <h3 className="card-title">{article.title}</h3>
               <div className="card-meta">
-                <span><i className="fa-solid fa-calendar"></i> {article.date}</span>
-                <span><i className="fa-solid fa-user"></i> Admin</span>
+                <span><i className="fa-solid fa-calendar"></i> {new Date(article.createdAt).toLocaleDateString('id-ID')}</span>
+                <span><i className="fa-solid fa-user"></i> {article.author}</span>
               </div>
-              <p className="card-excerpt">{article.desc}</p>
+              <p className="card-excerpt">{article.content.substring(0, 100)}...</p>
             </div>
           </Link>
         ))}

@@ -1,14 +1,17 @@
 import Link from 'next/link';
 
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+
 export const metadata = {
   title: 'Daftar Jurnal - KKM 14 PANAMBANGAN',
 }
 
-export default function JournalsPage() {
-  const journals = [
-    { id: 1, title: 'Pemetaan Potensi Lahan Pertanian Desa Panambangan', date: '15 Agustus 2026', size: '2.4 MB' },
-    { id: 2, title: 'Laporan Evaluasi Program TOGA Berkelanjutan', date: '20 Agustus 2026', size: '1.8 MB' }
-  ];
+export default async function JournalsPage() {
+  const journals = await prisma.journal.findMany({
+    orderBy: { createdAt: 'desc' }
+  });
 
   return (
     <div className="fade-in">
@@ -26,14 +29,14 @@ export default function JournalsPage() {
               <div>
                 <h3 style={{ fontSize: '16px', fontWeight: 'bold', color: 'var(--primary-color)', marginBottom: '5px' }}>{journal.title}</h3>
                 <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                  <span><i className="fa-regular fa-calendar"></i> {journal.date}</span> &nbsp;&nbsp;&bull;&nbsp;&nbsp; 
-                  <span><i className="fa-solid fa-weight-hanging"></i> {journal.size}</span>
+                  <span><i className="fa-regular fa-calendar"></i> {new Date(journal.createdAt).toLocaleDateString('id-ID')}</span> &nbsp;&nbsp;&bull;&nbsp;&nbsp; 
+                  <span><i className="fa-solid fa-user"></i> {journal.author}</span>
                 </div>
               </div>
             </div>
-            <button className="btn" style={{ padding: '8px 15px', fontSize: '14px' }}>
+            <a href={journal.pdf_url} target="_blank" rel="noopener noreferrer" className="btn" style={{ padding: '8px 15px', fontSize: '14px' }}>
               <i className="fa-solid fa-download"></i> Unduh
-            </button>
+            </a>
           </div>
         ))}
       </div>
