@@ -283,3 +283,75 @@ a {
   border-color: var(--primary-light);
   box-shadow: 0 0 0 3px rgba(86, 122, 98, 0.2);
 }
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-title {
+  font-weight: 800;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .navbar-brand {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .navbar-title {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 350px;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+  
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-img-container {
+    height: 180px;
+  }
+  
+  .section-title {
+    font-size: 16px;
+    text-align: center;
+  }
+}

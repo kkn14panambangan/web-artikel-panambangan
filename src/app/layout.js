@@ -11,10 +11,10 @@ export default function RootLayout({ children }) {
       <body>
         <div className="navbar">
           <div className="navbar-container">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div className="navbar-brand">
               <img src="/logo.png" alt="Logo" width="40" height="40" style={{ borderRadius: '50%' }} />
               <div>
-                <div style={{ fontWeight: 800, fontSize: '18px', color: '#fff' }}>KKM 14 DESA PANAMBANGAN</div>
+                <div className="navbar-title">KKM 14 DESA PANAMBANGAN</div>
               </div>
             </div>
             <nav className="nav-links">
