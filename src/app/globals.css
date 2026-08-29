@@ -352,6 +352,10 @@ div[id*="netlify-badge"] {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+
   .hamburger {
     display: block;
   }
