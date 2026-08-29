@@ -284,6 +284,19 @@ a {
   box-shadow: 0 0 0 3px rgba(86, 122, 98, 0.2);
 }
 
+/* Sembunyikan Netlify Badge/Toolbar */
+#netlify-badge,
+.netlify-badge,
+#netlify-toolbar,
+netlify-portal,
+netlify-toolbar,
+div[class*="netlify-badge"],
+div[id*="netlify-badge"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
 .navbar-brand {
   display: flex;
   align-items: center;
