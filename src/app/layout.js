@@ -1,5 +1,6 @@
 import './globals.css'
 import BackToTop from '../components/BackToTop'
+import Navbar from '../components/Navbar'
 
 export const metadata = {
   title: 'KKM 14 PANAMBANGAN',
@@ -10,24 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id">
       <body>
-        <div className="navbar">
-          <div className="navbar-container">
-            <div className="navbar-brand">
-              <img src="/logo.png" alt="Logo" width="40" height="40" style={{ borderRadius: '50%' }} />
-              <div>
-                <div className="navbar-title">
-                  KKM 14 <br className="mobile-only" /> DESA PANAMBANGAN
-                </div>
-              </div>
-            </div>
-            <nav className="nav-links">
-              <a href="/" className="nav-link">BERANDA</a>
-              <a href="/articles" className="nav-link">ARTIKEL</a>
-              <a href="/journals" className="nav-link">JURNAL</a>
-              <a href="/upload" className="nav-link">UPLOAD</a>
-            </nav>
-          </div>
-        </div>
+        <Navbar />
         
         <main className="container">
           {children}
