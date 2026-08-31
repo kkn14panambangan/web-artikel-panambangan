@@ -105,18 +105,50 @@ a {
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
+.navbar.navbar-collapsed {
+  width: 72px; /* Just enough for the logo */
+  height: 72px;
+  background: rgba(13, 61, 41, 0.7);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.navbar-collapsed:hover {
+  background: rgba(13, 61, 41, 0.95);
+  width: calc(100% - 40px);
+}
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 72px; 
   padding: 0 24px 0 12px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.navbar.navbar-collapsed .navbar-container {
+  justify-content: center;
+  padding: 0;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
   gap: 16px;
+  transition: all 0.4s ease;
+}
+
+.navbar.navbar-collapsed:not(:hover) .navbar-title {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.navbar.navbar-collapsed:not(:hover) .nav-links,
+.navbar.navbar-collapsed:not(:hover) .hamburger {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
 }
 
 .navbar-brand img {
@@ -201,7 +233,7 @@ a {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 110px 24px 40px; /* Increased top padding to clear the floating navbar */
   flex: 1;
 }
 

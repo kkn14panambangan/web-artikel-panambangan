@@ -1,14 +1,24 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="navbar-wrapper">
-      <div className="navbar">
+      <div className={`navbar ${isScrolled ? 'navbar-collapsed' : ''}`}>
         <div className="navbar-container">
           <Link href="/" className="navbar-brand" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', cursor: 'pointer' }}>
             <img src="/logo.png" alt="Logo" width="48" height="48" style={{ display: 'block' }} />
