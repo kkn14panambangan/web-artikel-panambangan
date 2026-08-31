@@ -627,6 +627,11 @@ div[id*="netlify-badge"] {
 
   .hamburger {
     display: block;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .hamburger:hover, .hamburger:active {
+    background-color: transparent;
   }
   
   .navbar-container {
@@ -636,19 +641,6 @@ div[id*="netlify-badge"] {
   .navbar-title {
     font-size: 16px;
     line-height: 1.2;
-  }
-  
-  .navbar.navbar-collapsed {
-    width: calc(100% - 32px); /* Maintain full width on mobile */
-    pointer-events: auto;
-    background: rgba(6, 78, 59, 0.95);
-  }
-  
-  .navbar.navbar-collapsed .navbar-title,
-  .navbar.navbar-collapsed .hamburger {
-    opacity: 1 !important;
-    width: auto !important;
-    overflow: visible !important;
   }
   
   .nav-links {
