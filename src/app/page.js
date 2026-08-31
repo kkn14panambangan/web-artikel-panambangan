@@ -1,11 +1,13 @@
 import Link from 'next/link';
+import { PrismaClient } from '@prisma/client';
 
-export default function Home() {
-  // Temporary dummy data
-  const articles = [
-    { slug: 'jahe-merah', title: 'Cara Praktis Menanam Jahe Merah', date: '30 Juli 2026', desc: 'Jahe merah kaya akan manfaat kesehatan dan bernilai ekonomi.', image: 'https://images.unsplash.com/photo-1596484552735-86699ebf3994?auto=format&fit=crop&w=500&q=60' },
-    { slug: 'maggot-bsf', title: 'Panduan Awal Budidaya Maggot BSF', date: '30 Juli 2026', desc: 'Ubah sampah dapur organik menjadi pakan ternak.', image: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=500&q=60' }
-  ];
+const prisma = new PrismaClient();
+
+export default async function Home() {
+  const articles = await prisma.article.findMany({
+    take: 3,
+    orderBy: { createdAt: 'desc' }
+  });
 
   return (
     <div className="fade-in">
@@ -33,15 +35,15 @@ export default function Home() {
         {articles.map((article) => (
           <Link href={`/articles/${article.slug}`} key={article.slug} className="card">
             <div className="card-img-container">
-              <img src={article.image} alt={article.title} className="card-img" />
+              <img src={article.image_url || 'https://images.unsplash.com/photo-1596484552735-86699ebf3994?auto=format&fit=crop&w=500&q=60'} alt={article.title} className="card-img" />
             </div>
             <div className="card-body">
               <h3 className="card-title">{article.title}</h3>
               <div className="card-meta">
-                <span><i className="fa-solid fa-calendar"></i> {article.date}</span>
-                <span><i className="fa-solid fa-user"></i> Administrator</span>
+                <span><i className="fa-solid fa-calendar"></i> {new Date(article.createdAt).toLocaleDateString('id-ID')}</span>
+                <span><i className="fa-solid fa-user"></i> {article.author || 'Administrator'}</span>
               </div>
-              <p className="card-excerpt">{article.desc}</p>
+              <p className="card-excerpt">{article.content.substring(0, 100)}...</p>
             </div>
           </Link>
         ))}
