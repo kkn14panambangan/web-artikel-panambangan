@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import LiveClock from './LiveClock';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,6 +47,7 @@ export default function Navbar() {
             <Link href="/articles" className="nav-link" onClick={() => setIsOpen(false)}>ARTIKEL</Link>
             <Link href="/journals" className="nav-link" onClick={() => setIsOpen(false)}>JURNAL</Link>
             <Link href="/upload" className="nav-link" onClick={() => setIsOpen(false)}>UPLOAD</Link>
+            <LiveClock />
           </nav>
         </div>
       </div>
