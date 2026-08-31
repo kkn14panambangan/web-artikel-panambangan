@@ -30,19 +30,19 @@ export default async function ArticleDetail({ params }) {
   }
 
   return (
-    <div className="fade-in container" style={{ maxWidth: '800px', margin: '0 auto', padding: '40px 20px' }}>
-      <div style={{ marginBottom: '30px', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '32px', color: 'var(--text-main)', marginBottom: '15px', lineHeight: 1.3 }}>
+    <div className="fade-in container" style={{ maxWidth: '900px', margin: '0 auto', padding: '60px 24px' }}>
+      <div style={{ marginBottom: '40px', textAlign: 'center' }}>
+        <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: '42px', fontWeight: '800', color: 'var(--text-main)', marginBottom: '20px', lineHeight: 1.2, textShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
           {article.title}
         </h1>
-        <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', color: 'var(--text-muted)', fontSize: '14px' }}>
-          <span><i className="fa-solid fa-calendar"></i> {new Date(article.createdAt).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-          <span><i className="fa-solid fa-user"></i> {article.author}</span>
+        <div style={{ display: 'inline-flex', gap: '24px', justifyContent: 'center', color: 'var(--text-muted)', fontSize: '15px', background: 'var(--surface-color)', padding: '10px 24px', borderRadius: '50px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', border: '1px solid rgba(0,0,0,0.05)' }}>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><i className="fa-solid fa-calendar" style={{ color: 'var(--primary-color)' }}></i> {new Date(article.createdAt).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><i className="fa-solid fa-user" style={{ color: 'var(--primary-color)' }}></i> {article.author}</span>
         </div>
       </div>
       
       {article.image_url && (
-        <div style={{ width: '100%', height: '400px', borderRadius: '16px', overflow: 'hidden', marginBottom: '40px', boxShadow: 'var(--shadow-md)' }}>
+        <div style={{ width: '100%', height: '500px', borderRadius: '24px', overflow: 'hidden', marginBottom: '50px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
           <img 
             src={article.image_url} 
             alt={article.title} 
@@ -53,6 +53,7 @@ export default async function ArticleDetail({ params }) {
       
       <div 
         className="dashboard-panel article-content" 
+        style={{ padding: '50px 60px', borderRadius: '24px', boxShadow: '0 10px 40px rgba(0,0,0,0.04)', border: 'none', background: '#ffffff', fontSize: '18px', lineHeight: '1.9' }}
         dangerouslySetInnerHTML={{ __html: article.content }}
       />
     </div>
