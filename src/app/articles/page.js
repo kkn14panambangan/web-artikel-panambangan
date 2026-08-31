@@ -23,13 +23,16 @@ export default async function ArticlesPage() {
         <div className="section-line"></div>
       </div>
 
-      <div style={{ marginBottom: '30px', display: 'flex', gap: '15px' }}>
-        <input 
-          type="text" 
-          placeholder="Cari artikel..." 
-          style={{ padding: '10px 15px', borderRadius: '6px', border: '1px solid var(--border-color)', width: '100%', maxWidth: '400px' }}
-        />
-        <button className="btn">Cari</button>
+      <div style={{ marginBottom: '40px', display: 'flex', gap: '12px', background: '#ffffff', padding: '8px', borderRadius: '50px', boxShadow: '0 8px 30px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.03)' }}>
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', paddingLeft: '16px' }}>
+          <i className="fa-solid fa-magnifying-glass" style={{ color: 'var(--text-muted)' }}></i>
+          <input 
+            type="text" 
+            placeholder="Cari artikel menarik..." 
+            style={{ padding: '12px 16px', border: 'none', background: 'transparent', width: '100%', fontSize: '16px', outline: 'none' }}
+          />
+        </div>
+        <button className="btn" style={{ borderRadius: '40px', padding: '12px 32px' }}>Cari</button>
       </div>
 
       <div className="grid grid-cols-3">
