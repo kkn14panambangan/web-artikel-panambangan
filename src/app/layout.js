@@ -1,6 +1,7 @@
 import './globals.css'
 import BackToTop from '../components/BackToTop'
 import Navbar from '../components/Navbar'
+import LiveClock from '../components/LiveClock'
 
 export const metadata = {
   title: 'KKM 14 PANAMBANGAN',
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           </div>
         </footer>
         <BackToTop />
+        <LiveClock />
       </body>
     </html>
   )
