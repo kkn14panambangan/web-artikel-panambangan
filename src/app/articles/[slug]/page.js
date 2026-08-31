@@ -6,8 +6,9 @@ export const dynamic = 'force-dynamic';
 const prisma = new PrismaClient();
 
 export async function generateMetadata({ params }) {
+  const { slug } = await params;
   const article = await prisma.article.findUnique({
-    where: { slug: params.slug }
+    where: { slug }
   });
   
   if (!article) return { title: 'Artikel Tidak Ditemukan' };
@@ -19,8 +20,9 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function ArticleDetail({ params }) {
+  const { slug } = await params;
   const article = await prisma.article.findUnique({
-    where: { slug: params.slug }
+    where: { slug }
   });
 
   if (!article) {
