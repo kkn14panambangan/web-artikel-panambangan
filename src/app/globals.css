@@ -730,6 +730,14 @@ div[id*="netlify-badge"] {
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .hero-map-container {
+    width: 100% !important;
+    height: 250px !important;
+    border-radius: 16px !important;
   }
 
   .hero-title {
