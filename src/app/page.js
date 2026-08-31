@@ -14,7 +14,7 @@ export default async function Home() {
   return (
     <div className="fade-in">
       <div className="hero" style={{ position: 'relative', height: 'min(600px, 80vh)', backgroundColor: '#000', borderRadius: '32px', overflow: 'hidden', marginBottom: '80px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 8%', gap: '40px', boxShadow: '0 30px 60px rgba(0,0,0,0.12)' }}>
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80" alt="Desa" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, opacity: 0.8 }} />
+        <img src="/hero-bg.png" alt="Balai Desa Panambangan" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, opacity: 0.8 }} />
         <div className="hero-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(2, 44, 34, 0.95) 0%, rgba(6, 78, 59, 0.6) 55%, rgba(0,0,0,0) 100%)', zIndex: 1 }}></div>
         
         <div className="hero-content" style={{ position: 'relative', zIndex: 10, color: 'white', maxWidth: '650px', width: '100%' }}>
