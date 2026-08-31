@@ -31,15 +31,14 @@ export default async function Home() {
         </div>
 
         <div className="hero-map-container" style={{ position: 'relative', zIndex: 10, width: '450px', height: '300px', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.4)', border: '4px solid rgba(255,255,255,0.1)', flexShrink: 0, backdropFilter: 'blur(10px)' }}>
-          <iframe 
-            src="https://maps.google.com/maps?q=Desa%20Panambangan,%20Sedong,%20Cirebon,%20Jawa%20Barat&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen="" 
-            loading="lazy"
-            title="Peta Desa Panambangan">
-          </iframe>
+          <img 
+            src="/qgis-map.jpg" 
+            alt="Peta QGIS Desa Panambangan" 
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          />
+          <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(0,0,0,0.7)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontSize: '11px', fontWeight: 'bold', backdropFilter: 'blur(4px)' }}>
+            QGIS Map
+          </div>
         </div>
       </div>
 
