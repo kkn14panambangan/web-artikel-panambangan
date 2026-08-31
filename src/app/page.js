@@ -22,7 +22,7 @@ export default async function Home() {
             Selamat Datang di Portal Desa
           </div>
           <h1 className="hero-title" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: '800', lineHeight: 1.15, marginBottom: '24px', textShadow: '0 10px 30px rgba(0,0,0,0.3)', letterSpacing: '-0.02em' }}>
-            Edukasi Ketahanan Pangan Melalui <span style={{ color: '#6ee7b7' }}>TOGA</span> & <span style={{ color: '#6ee7b7' }}>Maggot BSF</span>
+            Edukasi Ketahanan Pangan Melalui <span style={{ color: '#6ee7b7' }}>TOGA</span>, <span style={{ color: '#6ee7b7' }}>Maggot BSF</span> & <span style={{ color: '#6ee7b7' }}>UMKM Kembang Tahu</span>
           </h1>
           <p style={{ maxWidth: '650px', fontSize: 'clamp(16px, 2vw, 20px)', lineHeight: 1.6, opacity: 0.9, textShadow: '0 4px 10px rgba(0,0,0,0.2)' }}>
             Mari kita wujudkan Desa Panambangan menjadi Desa yang mandiri dan berwawasan lingkungan melalui aksi nyata berkelanjutan.
