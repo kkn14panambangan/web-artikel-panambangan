@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
-import { writeFile } from 'fs/promises';
-import path from 'path';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function POST(request) {
   try {
@@ -16,14 +19,26 @@ export async function POST(request) {
 
     // Create unique filename
     const filename = Date.now() + '-' + file.name.replace(/\s+/g, '-');
-    const uploadDir = path.join(process.cwd(), 'public', 'uploads');
     
-    // Note: ensure the directory exists or this will fail. For simplicity, assuming public/uploads exists.
-    const filepath = path.join(uploadDir, filename);
+    // Upload to Supabase Storage bucket 'uploads'
+    const { data: uploadData, error } = await supabase.storage
+      .from('uploads')
+      .upload(filename, buffer, {
+        contentType: file.type,
+        upsert: false
+      });
 
-    await writeFile(filepath, buffer);
+    if (error) {
+      console.error('Supabase upload error:', error);
+      throw error;
+    }
 
-    return NextResponse.json({ success: true, url: `/uploads/${filename}` });
+    // Get public URL
+    const { data: { publicUrl } } = supabase.storage
+      .from('uploads')
+      .getPublicUrl(filename);
+
+    return NextResponse.json({ success: true, url: publicUrl });
   } catch (error) {
     console.error('Error uploading file:', error);
     return NextResponse.json({ error: 'Error uploading file' }, { status: 500 });
