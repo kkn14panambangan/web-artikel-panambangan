@@ -79,7 +79,7 @@ export default function UploadPage() {
         </button>
       </div>
 
-      <div style={{ backgroundColor: 'white', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', border: '1px solid var(--border-color)' }}>
+      <div className="dashboard-panel">
         {tab === 'article' ? (
           <form onSubmit={handleArticleSubmit}>
             <div className="form-group">

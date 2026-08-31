@@ -13,7 +13,7 @@ export default function Home() {
         <div className="hero-overlay"></div>
         <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80" alt="Desa" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
         <div className="hero-content">
-          <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.9)', color: 'var(--primary-color)', padding: '8px 16px', fontWeight: 'bold', borderLeft: '4px solid var(--primary-light)', marginBottom: '10px' }}>
+          <div className="hero-badge">
             Selamat Datang di Portal Desa
           </div>
           <h1 className="hero-title">Edukasi Ketahanan Pangan Melalui TOGA & Maggot BSF</h1>
@@ -53,7 +53,7 @@ export default function Home() {
         <div className="section-line"></div>
       </div>
       
-      <div style={{ textAlign: 'center', padding: '40px', backgroundColor: 'white', borderRadius: '8px', border: '1px dashed var(--border-color)' }}>
+      <div className="dashboard-panel" style={{ textAlign: 'center' }}>
         <i className="fa-solid fa-file-pdf" style={{ fontSize: '40px', color: 'var(--primary-lighter)', marginBottom: '15px' }}></i>
         <h3 style={{ fontSize: '18px', color: 'var(--primary-color)', marginBottom: '10px' }}>Kumpulan Jurnal PDF</h3>
         <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>Akses berbagai jurnal penelitian dan dokumen KKM dalam format PDF.</p>
