@@ -31,6 +31,9 @@ export default function Navbar() {
             <div className="navbar-title">
               <span className="navbar-title-main">KKM 14</span>
               <span className="navbar-title-sub">DESA PANAMBANGAN</span>
+              <span style={{ fontSize: '0.55rem', fontWeight: '500', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '2px', lineHeight: '1.2' }}>
+                Kec. Sedong, Kab. Cirebon, Jawa Barat
+              </span>
             </div>
           </Link>
 
