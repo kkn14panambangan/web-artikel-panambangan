@@ -124,7 +124,7 @@ a {
   justify-content: space-between;
   align-items: center;
   height: 72px; 
-  padding: 0 24px 0 12px;
+  padding: 0 24px 4px 12px; /* 4px bottom padding to perfectly center visually */
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -195,6 +195,7 @@ a {
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 6px;
 }
 
