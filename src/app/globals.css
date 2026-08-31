@@ -638,6 +638,19 @@ div[id*="netlify-badge"] {
     line-height: 1.2;
   }
   
+  .navbar.navbar-collapsed {
+    width: calc(100% - 32px); /* Maintain full width on mobile */
+    pointer-events: auto;
+    background: rgba(6, 78, 59, 0.95);
+  }
+  
+  .navbar.navbar-collapsed .navbar-title,
+  .navbar.navbar-collapsed .hamburger {
+    opacity: 1 !important;
+    width: auto !important;
+    overflow: visible !important;
+  }
+  
   .nav-links {
     position: absolute;
     top: 70px;
