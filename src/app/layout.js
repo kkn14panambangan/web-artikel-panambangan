@@ -3,8 +3,16 @@ import BackToTop from '../components/BackToTop'
 import Navbar from '../components/Navbar'
 
 export const metadata = {
-  title: 'KKM 14 PANAMBANGAN',
+  title: 'Web Artikel Panambangan',
   description: 'Web Portal dan Sistem Informasi KKM 14 UMC Desa Panambangan.',
+  openGraph: {
+    title: 'Web Artikel Panambangan',
+    description: 'Web Portal dan Sistem Informasi KKM 14 UMC Desa Panambangan.',
+    url: 'https://web-artikel-panambangan.vercel.app/',
+    siteName: 'Web Artikel Panambangan',
+    locale: 'id_ID',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({ children }) {
