@@ -21,10 +21,10 @@ export default async function Home() {
             <span style={{ display: 'block', width: '8px', height: '8px', background: '#10b981', borderRadius: '50%', boxShadow: '0 0 10px #10b981' }}></span>
             Selamat Datang di Portal Desa
           </div>
-          <h1 className="hero-title" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: '800', lineHeight: 1.15, marginBottom: '24px', textShadow: '0 10px 30px rgba(0,0,0,0.3)', letterSpacing: '-0.02em' }}>
-            Edukasi Ketahanan Pangan Melalui <span style={{ color: '#6ee7b7' }}>TOGA</span>, <span style={{ color: '#6ee7b7' }}>Maggot BSF</span> & <span style={{ color: '#6ee7b7' }}>UMKM Kembang Tahu</span>
+          <h1 className="hero-title" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(32px, 4.5vw, 48px)', fontWeight: '800', lineHeight: 1.3, marginBottom: '24px', textShadow: '0 4px 20px rgba(0,0,0,0.4)', letterSpacing: '-0.01em', maxWidth: '850px' }}>
+            Edukasi Ketahanan Pangan Melalui <span style={{ color: '#34d399' }}>TOGA</span>, <span style={{ color: '#34d399' }}>Maggot BSF</span> & <span style={{ color: '#34d399' }}>UMKM Kembang Tahu</span>
           </h1>
-          <p style={{ maxWidth: '650px', fontSize: 'clamp(16px, 2vw, 20px)', lineHeight: 1.6, opacity: 0.9, textShadow: '0 4px 10px rgba(0,0,0,0.2)' }}>
+          <p style={{ maxWidth: '650px', fontSize: 'clamp(15px, 1.8vw, 18px)', lineHeight: 1.6, opacity: 0.9, textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>
             Mari kita wujudkan Desa Panambangan menjadi Desa yang mandiri dan berwawasan lingkungan melalui aksi nyata berkelanjutan.
           </p>
         </div>

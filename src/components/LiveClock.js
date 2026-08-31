@@ -38,14 +38,15 @@ export default function LiveClock() {
       alignItems: 'center',
       color: 'rgba(255, 255, 255, 0.9)',
       lineHeight: '1.2',
-      marginLeft: '16px',
+      marginLeft: '12px',
       paddingLeft: '16px',
-      borderLeft: '1px solid rgba(255, 255, 255, 0.2)'
+      borderLeft: '1px solid rgba(255, 255, 255, 0.15)',
+      marginRight: '8px'
     }}>
-      <div style={{ fontSize: '11px', fontWeight: '600', opacity: 0.8, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-        {`${dayName}, ${date} ${monthName} ${year}`}
+      <div style={{ fontSize: '10px', fontWeight: '500', opacity: 0.7, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '2px' }}>
+        {`${date} ${monthName} ${year}`}
       </div>
-      <div style={{ fontSize: '15px', fontWeight: 'bold', letterSpacing: '1.5px', color: '#6ee7b7' }}>
+      <div style={{ fontSize: '14px', fontWeight: '700', letterSpacing: '1px', color: '#6ee7b7' }}>
         {`${hours}:${minutes}:${seconds}`}
       </div>
     </div>
