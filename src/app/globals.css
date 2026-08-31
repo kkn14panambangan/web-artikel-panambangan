@@ -643,6 +643,26 @@ div[id*="netlify-badge"] {
     line-height: 1.2;
   }
   
+  /* Prevent sticky hover on mobile when collapsed */
+  .navbar.navbar-collapsed,
+  .navbar.navbar-collapsed:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+    pointer-events: none !important;
+  }
+  
+  .navbar.navbar-collapsed .navbar-brand {
+    pointer-events: auto !important;
+  }
+
+  .navbar.navbar-collapsed .navbar-title,
+  .navbar.navbar-collapsed .hamburger {
+    opacity: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+  }
+  
   .nav-links {
     position: absolute;
     top: 70px;
