@@ -9,7 +9,12 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+        setIsOpen(false); // Close mobile menu when scrolled down
+      } else {
+        setIsScrolled(false);
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
