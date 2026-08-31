@@ -32,12 +32,12 @@ export default async function Home() {
 
         <div className="hero-map-container" style={{ position: 'relative', zIndex: 10, width: '450px', height: '300px', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.4)', border: '4px solid rgba(255,255,255,0.1)', flexShrink: 0, backdropFilter: 'blur(10px)' }}>
           <img 
-            src="/qgis-map.jpg" 
-            alt="Peta QGIS Desa Panambangan" 
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+            src="/qgis-map.png" 
+            alt="Peta Desa Panambangan" 
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 45%' }} 
           />
           <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(0,0,0,0.7)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontSize: '11px', fontWeight: 'bold', backdropFilter: 'blur(4px)' }}>
-            QGIS Map
+            Peta Wilayah
           </div>
         </div>
       </div>
