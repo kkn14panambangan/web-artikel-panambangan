@@ -32,18 +32,13 @@ export default function LiveClock() {
   const seconds = String(time.getSeconds()).padStart(2, '0');
 
   return (
-    <div style={{
+    <div className="live-clock" style={{
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       color: 'rgba(255, 255, 255, 0.9)',
-      lineHeight: '1.2',
-      marginLeft: '12px',
-      paddingLeft: '16px',
-      borderLeft: '1px solid rgba(255, 255, 255, 0.15)',
-      marginRight: '8px',
-      height: '100%'
+      lineHeight: '1.2'
     }}>
       <div style={{ fontSize: '10px', fontWeight: '500', opacity: 0.7, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '2px' }}>
         {`${date} ${monthName} ${year}`}

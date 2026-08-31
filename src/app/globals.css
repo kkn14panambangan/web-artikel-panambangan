@@ -233,6 +233,14 @@ a {
   transform: translateY(0);
 }
 
+.live-clock {
+  margin-left: 12px;
+  padding-left: 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  margin-right: 8px;
+  height: 100%;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -701,6 +709,16 @@ div[id*="netlify-badge"] {
   
   .nav-link:hover {
     background-color: rgba(255,255,255,0.1);
+  }
+
+  .live-clock {
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: 0;
+    padding-top: 12px;
+    margin-top: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .hero {
