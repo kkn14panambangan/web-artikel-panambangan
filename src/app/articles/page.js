@@ -44,7 +44,7 @@ export default async function ArticlesPage() {
                 <span><i className="fa-solid fa-calendar"></i> {new Date(article.createdAt).toLocaleDateString('id-ID')}</span>
                 <span><i className="fa-solid fa-user"></i> {article.author}</span>
               </div>
-              <p className="card-excerpt">{article.content.substring(0, 100)}...</p>
+              <p className="card-excerpt">{article.content.replace(/<[^>]*>?/gm, '').substring(0, 100)}...</p>
             </div>
           </Link>
         ))}

@@ -51,11 +51,10 @@ export default async function ArticleDetail({ params }) {
         </div>
       )}
       
-      <div className="dashboard-panel" style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--text-main)' }}>
-        {article.content.split('\n').map((paragraph, index) => (
-          <p key={index} style={{ marginBottom: '15px' }}>{paragraph}</p>
-        ))}
-      </div>
+      <div 
+        className="dashboard-panel article-content" 
+        dangerouslySetInnerHTML={{ __html: article.content }}
+      />
     </div>
   );
 }
