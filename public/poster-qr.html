@@ -15,30 +15,19 @@
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
   }
-  
-  .poster-wrapper {
+
+  .poster {
     width: 397px; /* 10.5cm (A6 width) */
     height: 561px; /* 14.8cm (A6 height) */
     margin: 0 auto;
     background: white;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
     position: relative;
-    border: 1px solid #e5e7eb;
-  }
-
-  .poster {
-    width: 794px;
-    height: 1123px;
-    background: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scale(0.5);
-    transform-origin: top left;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #e5e7eb;
   }
 
   .pattern-bg {
@@ -53,8 +42,8 @@
     position: absolute;
     top: 25%;
     left: 0;
-    width: 180px;
-    height: 350px;
+    width: 90px;
+    height: 175px;
     background: #16a34a;
     clip-path: polygon(0 0, 100% 50%, 0 100%);
     z-index: 1;
@@ -62,10 +51,10 @@
   
   .shape-bottom-right {
     position: absolute;
-    top: 643px; /* 1123px - 480px, replaces bottom: 0 to fix print pagination bug */
+    top: 321px; /* 561px - 240px */
     right: 0;
     width: 100%;
-    height: 480px;
+    height: 240px;
     background: #16a34a;
     clip-path: polygon(25% 100%, 100% 15%, 100% 100%);
     z-index: 1;
@@ -73,7 +62,7 @@
 
   .header {
     width: 100%;
-    padding: 30px 45px;
+    padding: 15px 22px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -84,13 +73,13 @@
   .logo-left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
   }
   
   .logo-left-text-1 {
-    font-size: 48px;
+    font-size: 24px;
     font-weight: 900;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     color: #111827;
     display: flex;
     align-items: center;
@@ -101,43 +90,43 @@
   }
 
   .logo-left-text-2 {
-    font-size: 14px;
+    font-size: 8px;
     font-weight: 700;
     line-height: 1.2;
     color: #111827;
-    border-left: 2px solid #111827;
-    padding-left: 12px;
+    border-left: 1px solid #111827;
+    padding-left: 6px;
   }
 
   .logo-right {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
   }
 
   .logo-right img {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     object-fit: cover;
     border-radius: 50%;
   }
 
   .logo-right-text {
-    font-size: 18px;
+    font-size: 9px;
     font-weight: 800;
     color: #16a34a;
     letter-spacing: -0.5px;
   }
 
   .title-section {
-    margin-top: 30px;
+    margin-top: 15px;
     text-align: center;
     z-index: 10;
   }
 
   .title {
-    font-size: 40px;
+    font-size: 20px;
     font-weight: 700;
     color: #111827;
     margin: 0;
@@ -145,40 +134,40 @@
   }
 
   .subtitle {
-    font-size: 22px;
+    font-size: 11px;
     color: #4b5563;
-    margin: 8px 0 0 0;
+    margin: 4px 0 0 0;
     font-weight: 500;
   }
 
   .merchant-id {
-    font-size: 20px;
+    font-size: 10px;
     color: #6b7280;
-    margin-top: 10px;
+    margin-top: 5px;
     font-weight: 600;
   }
 
   .qr-container {
-    margin-top: 30px;
+    margin-top: 15px;
     background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 5px 8px -1px rgba(0, 0, 0, 0.1);
     z-index: 10;
     position: relative;
   }
 
   .qr-code {
-    width: 320px;
-    height: 320px;
+    width: 160px;
+    height: 160px;
     display: block;
   }
 
   .footer-content {
     display: flex;
     width: 100%;
-    padding: 0 45px;
-    margin-top: 40px;
+    padding: 0 22px;
+    margin-top: 20px;
     box-sizing: border-box;
     z-index: 10;
     position: relative;
@@ -189,26 +178,26 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-right: 20px;
+    padding-right: 10px;
   }
 
   .footer-message {
-    font-size: 28px;
+    font-size: 14px;
     font-weight: 700;
     color: #111827;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   .footer-submessage {
-    font-size: 18px;
+    font-size: 9px;
     color: #4b5563;
     line-height: 1.4;
   }
 
   .instructions {
     position: absolute;
-    top: 955px; /* Replaces bottom: 45px */
-    right: 45px;
+    top: 477px;
+    right: 22px;
     z-index: 10;
     color: white;
     display: flex;
@@ -217,14 +206,14 @@
   }
 
   .instructions-title {
-    font-size: 13px;
+    font-size: 8px;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
   }
 
   .instruction-steps {
     display: flex;
-    gap: 15px;
+    gap: 8px;
   }
 
   .step {
@@ -232,37 +221,39 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 65px;
+    width: 40px;
   }
 
   .step-icon {
-    width: 45px;
-    height: 60px;
+    width: 26px;
+    height: 35px;
     background: white;
     color: #16a34a;
-    border-radius: 8px;
+    border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
-    margin-bottom: 8px;
-    border: 2px solid #e5e7eb;
-    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.1);
+    font-size: 14px;
+    margin-bottom: 4px;
+    border: 1px solid #e5e7eb;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.1);
   }
   
   .step-text {
-    font-size: 10px;
+    font-size: 6px;
     font-weight: 700;
     line-height: 1.2;
     color: white;
+    white-space: nowrap;
+    transform: scale(0.9);
   }
 
   .bottom-left-info {
     position: absolute;
-    top: 1040px; /* Replaces bottom: 45px */
-    left: 45px;
+    top: 520px;
+    left: 22px;
     z-index: 10;
-    font-size: 14px;
+    font-size: 8px;
     color: #4b5563;
     font-weight: 600;
     line-height: 1.5;
@@ -271,7 +262,7 @@
   @media print {
     body { background: white; padding: 0; margin: 0; }
     
-    .poster-wrapper {
+    .poster {
       box-shadow: none;
       margin: 1cm auto; /* Adds a nice margin on paper */
       border: 1px dashed #9ca3af; /* Dashed cut line */
@@ -283,7 +274,7 @@
       -webkit-print-color-adjust: exact; 
       print-color-adjust: exact; 
     }
-    .qr-container { box-shadow: 0 0 0 2px #e5e7eb; }
+    .qr-container { box-shadow: 0 0 0 1px #e5e7eb; }
     
     .print-button { display: none !important; }
   }
@@ -318,8 +309,7 @@
     <i class="fa-solid fa-print"></i> Cetak Sekarang
   </button>
   
-  <div class="poster-wrapper">
-    <div class="poster">
+  <div class="poster">
     <div class="pattern-bg"></div>
     <div class="shape-left"></div>
     <div class="shape-bottom-right"></div>
