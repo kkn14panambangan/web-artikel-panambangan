@@ -30,14 +30,44 @@ export default async function Home() {
           </p>
         </div>
 
-        <div className="hero-map-container">
+        <div className="hero-map-container map-styled">
+          {/* Base Map Image */}
           <img 
             src="/qgis-map.png" 
             alt="Peta Desa Panambangan" 
-            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
+            className="map-base-img"
           />
-          <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(0,0,0,0.7)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontSize: '11px', fontWeight: 'bold', backdropFilter: 'blur(4px)' }}>
-            Peta Wilayah
+          
+          {/* Map Frame Overlay */}
+          <div className="map-frame">
+            {/* Title */}
+            <div className="map-title-box">
+              <h3>PETA DESA PANAMBANGAN</h3>
+              <p>Kecamatan Sedong, Kab. Cirebon</p>
+            </div>
+            
+            {/* Compass */}
+            <div className="map-compass">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Compass_rose_pale.svg" alt="U" />
+            </div>
+            
+            {/* Legend */}
+            <div className="map-legend">
+              <h4>LEGENDA</h4>
+              <ul className="legend-list">
+                <li><span className="legend-color legend-red"></span> Pemukiman</li>
+                <li><span className="legend-color legend-green"></span> Pertanian/Hutan</li>
+                <li><span className="legend-color legend-yellow"></span> Perkebunan</li>
+                <li><span className="legend-line border-line"></span> Batas Desa</li>
+                <li><span className="legend-icon"><i className="fa-solid fa-location-dot"></i></span> Fasilitas</li>
+              </ul>
+            </div>
+            
+            {/* Scale */}
+            <div className="map-scale">
+              <div className="scale-bar"></div>
+              <span>500 m</span>
+            </div>
           </div>
         </div>
       </div>
