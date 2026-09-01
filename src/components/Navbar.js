@@ -50,7 +50,7 @@ export default function Navbar() {
             <Link href="/articles" className="nav-link" onClick={() => setIsOpen(false)}>ARTIKEL</Link>
             <Link href="/journals" className="nav-link" onClick={() => setIsOpen(false)}>JURNAL</Link>
             <Link href="/upload" className="nav-link" onClick={() => setIsOpen(false)}>UPLOAD</Link>
-            <a href="/poster-qr.html" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={() => setIsOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><i className="fa-solid fa-qrcode"></i> QR CODE</a>
+            <a href="/poster-qr.html" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={() => setIsOpen(false)}><i className="fa-solid fa-qrcode" style={{ marginRight: '6px' }}></i> QR CODE</a>
             <LiveClock />
           </nav>
         </div>
