@@ -264,10 +264,39 @@
       print-color-adjust: exact; 
     }
     .qr-container { box-shadow: 0 0 0 2px #e5e7eb; }
+    .print-button { display: none !important; }
+  }
+
+  .print-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1000;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.2s;
+  }
+  .print-button:hover {
+    background: #15803d;
   }
 </style>
 </head>
 <body>
+  <button class="print-button" onclick="window.print()">
+    <i class="fa-solid fa-print"></i> Cetak Poster
+  </button>
+  
   <div class="poster">
     <div class="pattern-bg"></div>
     <div class="shape-left"></div>
