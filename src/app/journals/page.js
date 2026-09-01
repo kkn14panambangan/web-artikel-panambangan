@@ -23,7 +23,7 @@ export default async function JournalsPage() {
         <div className="section-line"></div>
       </div>
 
-      <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '24px' }}>
+      <div className="grid grid-cols-3">
         {journals.map((journal, index) => (
           <div key={journal.id} className="card" style={{ padding: '24px', display: 'flex', flexDirection: 'column', height: 'auto', background: 'var(--surface-color)' }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', marginBottom: '20px' }}>
