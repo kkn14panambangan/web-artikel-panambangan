@@ -1,5 +1,10 @@
 "use client";
 import { useState } from 'react';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function UploadPage() {
   const [tab, setTab] = useState('article');
@@ -35,24 +40,40 @@ export default function UploadPage() {
     if (!journalFile) return;
     setLoading(true);
     try {
-      const formData = new FormData();
-      formData.append('file', journalFile);
+      // Bypassing Vercel's 4.5MB API route limit by uploading directly from client
+      const filename = Date.now() + '-' + journalFile.name.replace(/\s+/g, '-');
       
-      const uploadRes = await fetch('/api/upload', { method: 'POST', body: formData });
-      const uploadData = await uploadRes.json();
-      
-      if (uploadData.success) {
-        const res = await fetch('/api/journals', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ title: journalTitle, pdf_url: uploadData.url })
+      const { data, error } = await supabase.storage
+        .from('uploads')
+        .upload(filename, journalFile, {
+          upsert: false
         });
-        if (res.ok) {
-          alert('Jurnal berhasil diupload!');
-          setJournalTitle(''); setJournalFile(null);
-        } else alert('Gagal menyimpan data jurnal.');
-      } else alert('Gagal mengupload file.');
-    } catch(err) { alert('Terjadi kesalahan.'); }
+        
+      if (error) {
+        console.error('Supabase upload error:', error);
+        alert('Gagal mengupload file ke storage.');
+        setLoading(false);
+        return;
+      }
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('uploads')
+        .getPublicUrl(filename);
+      
+      const res = await fetch('/api/journals', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: journalTitle, pdf_url: publicUrl })
+      });
+      
+      if (res.ok) {
+        alert('Jurnal berhasil diupload!');
+        setJournalTitle(''); setJournalFile(null);
+      } else alert('Gagal menyimpan data jurnal ke database.');
+    } catch(err) { 
+      console.error(err);
+      alert('Terjadi kesalahan.'); 
+    }
     setLoading(false);
   };
 
