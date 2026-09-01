@@ -977,9 +977,9 @@ div[id*="netlify-badge"] {
 
 /* --- Article Detail Page Styles --- */
 .article-container {
-  max-width: 900px;
+  max-width: 800px; /* Make the reading column slightly narrower for better readability */
   margin: 0 auto;
-  padding: 120px 24px 60px;
+  padding: 20px 0 60px; /* Only top padding of 20px (since .container already has 90px) */
 }
 
 .article-header-wrapper {
@@ -1041,12 +1041,35 @@ div[id*="netlify-badge"] {
   border: none;
   background: #ffffff;
   font-size: 18px;
-  line-height: 1.9;
+  line-height: 1.8;
+  color: #334155; /* Slightly softer dark gray for comfortable reading */
+}
+
+.article-content-panel p {
+  margin-bottom: 24px;
+}
+
+.article-content-panel h2, .article-content-panel h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.article-content-panel img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 24px 0;
+}
+
+.article-content-panel ul, .article-content-panel ol {
+  margin-bottom: 24px;
+  padding-left: 24px;
 }
 
 @media (max-width: 768px) {
   .article-container {
-    padding: 110px 16px 40px;
+    padding: 0 0 40px; /* Remove top padding completely, rely on .container */
   }
   .article-title {
     font-size: 26px;
@@ -1072,7 +1095,11 @@ div[id*="netlify-badge"] {
   .article-content-panel {
     padding: 24px 20px;
     font-size: 16px;
+    line-height: 1.7;
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  }
+  .article-content-panel p {
+    margin-bottom: 16px;
   }
 }
