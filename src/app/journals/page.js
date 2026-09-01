@@ -31,7 +31,7 @@ export default async function JournalsPage() {
                 <i className="fa-solid fa-file-pdf" style={{ fontSize: '32px' }}></i>
               </div>
               <div>
-                <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--text-main)', marginBottom: '8px', lineHeight: '1.4' }}>{journal.title}</h3>
+                <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--text-main)', marginBottom: '8px', lineHeight: '1.4', wordBreak: 'break-word' }}>{journal.title}</h3>
                 <div style={{ fontSize: '13px', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <span><i className="fa-regular fa-calendar" style={{ width: '16px' }}></i> {new Date(journal.createdAt).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                   <span><i className="fa-solid fa-user" style={{ width: '16px' }}></i> {journal.author}</span>
