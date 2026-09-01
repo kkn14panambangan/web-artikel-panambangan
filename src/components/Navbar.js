@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className={`navbar ${isScrolled ? 'navbar-collapsed' : ''}`}>
         <div className="navbar-container">
           <Link href="/" className="navbar-brand" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', cursor: 'pointer' }}>
-            <img src="/logo.png" alt="Logo" width="48" height="48" style={{ display: 'block' }} />
+            <img src="/logo.jpg" alt="Logo" width="48" height="48" style={{ display: 'block' }} />
             <div className="navbar-title">
               <span className="navbar-title-main">KKM 14</span>
               <span className="navbar-title-sub">DESA PANAMBANGAN</span>
