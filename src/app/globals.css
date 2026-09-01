@@ -251,28 +251,57 @@ a {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 480px;
-  background-color: var(--primary-color);
-  border-radius: 24px;
+  min-height: min(600px, 80vh);
+  background-color: #000;
+  border-radius: 32px;
   overflow: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
   display: flex;
-  align-items: flex-end;
-  padding: 40px;
-  box-shadow: var(--shadow-xl);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  gap: 40px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: 0;
+  opacity: 0.8;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(2, 44, 34, 0.95) 0%, rgba(6, 78, 59, 0.4) 50%, rgba(0,0,0,0.1) 100%);
+  background: linear-gradient(90deg, rgba(2, 44, 34, 0.95) 0%, rgba(6, 78, 59, 0.6) 55%, rgba(0,0,0,0) 100%);
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
   color: white;
-  max-width: 700px;
+  max-width: 650px;
+  width: 100%;
+}
+
+.hero-map-container {
+  position: relative;
+  z-index: 10;
+  width: 320px;
+  height: 420px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border: 4px solid rgba(255,255,255,0.1);
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
 }
 
 .hero-badge {
@@ -722,10 +751,9 @@ div[id*="netlify-badge"] {
   }
 
   .hero {
-    height: auto;
-    min-height: 400px;
-    padding: 24px;
-    border-radius: 16px;
+    min-height: auto;
+    padding: 120px 24px 40px;
+    border-radius: 24px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -734,10 +762,14 @@ div[id*="netlify-badge"] {
     gap: 32px;
   }
 
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(2, 44, 34, 0.95) 0%, rgba(6, 78, 59, 0.8) 60%, rgba(0,0,0,0.4) 100%);
+  }
+
   .hero-map-container {
-    width: 100% !important;
-    height: 380px !important;
-    border-radius: 16px !important;
+    width: 100%;
+    height: 380px;
+    border-radius: 16px;
   }
 
   .hero-title {
