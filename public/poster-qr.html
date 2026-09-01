@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poster QR Code KKM 14</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+  
+  body {
+    margin: 0;
+    padding: 40px;
+    background: #3f3f46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .poster {
+    width: 794px;
+    height: 1123px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pattern-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 0;
+  }
+
+  .shape-left {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 180px;
+    height: 350px;
+    background: #16a34a; /* Modern green matching the design aesthetics */
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    z-index: 1;
+  }
+  
+  .shape-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 350px;
+    background: #16a34a;
+    clip-path: polygon(45% 100%, 100% 15%, 100% 100%);
+    z-index: 1;
+  }
+
+  .header {
+    width: 100%;
+    padding: 30px 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    z-index: 10;
+  }
+
+  .logo-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo-left-text-1 {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #111827;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-left-text-1 span {
+    font-weight: 400;
+  }
+
+  .logo-left-text-2 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111827;
+    border-left: 2px solid #111827;
+    padding-left: 12px;
+  }
+
+  .logo-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .logo-right img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .logo-right-text {
+    font-size: 18px;
+    font-weight: 800;
+    color: #16a34a;
+    letter-spacing: -0.5px;
+  }
+
+  .title-section {
+    margin-top: 50px;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+
+  .subtitle {
+    font-size: 26px;
+    color: #4b5563;
+    margin: 10px 0 0 0;
+    font-weight: 500;
+  }
+
+  .merchant-id {
+    font-size: 22px;
+    color: #6b7280;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+
+  .qr-container {
+    margin-top: 40px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    position: relative;
+  }
+
+  .qr-code {
+    width: 400px;
+    height: 400px;
+    display: block;
+  }
+
+  .footer-message {
+    margin-top: 50px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #111827;
+    z-index: 10;
+  }
+
+  .footer-submessage {
+    margin-top: 12px;
+    font-size: 20px;
+    color: #4b5563;
+    z-index: 10;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .instructions {
+    position: absolute;
+    bottom: 45px;
+    right: 45px;
+    z-index: 10;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .instructions-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .instruction-steps {
+    display: flex;
+    gap: 20px;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 75px;
+  }
+
+  .step-icon {
+    width: 50px;
+    height: 70px;
+    background: white;
+    color: #16a34a;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+    border: 2px solid #e5e7eb;
+    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.1);
+  }
+  
+  .step-text {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .bottom-left-info {
+    position: absolute;
+    bottom: 45px;
+    left: 45px;
+    z-index: 10;
+    font-size: 15px;
+    color: #4b5563;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .poster { box-shadow: none; width: 100%; height: 100%; }
+    .shape-bottom-right, .shape-left { 
+      -webkit-print-color-adjust: exact; 
+      print-color-adjust: exact; 
+    }
+    .qr-container { box-shadow: 0 0 0 2px #e5e7eb; }
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <div class="pattern-bg"></div>
+    <div class="shape-left"></div>
+    <div class="shape-bottom-right"></div>
+    
+    <div class="header">
+      <div class="logo-left">
+        <div class="logo-left-text-1"><i class="fa-solid fa-qrcode" style="font-size: 42px; margin-right: 8px; color: #111827;"></i> Q<span>R</span></div>
+        <div class="logo-left-text-2">QR Code Standar<br>Informasi Desa</div>
+      </div>
+      <div class="logo-right">
+        <img src="/logo.jpg" alt="Logo KKM">
+        <div class="logo-right-text">KKM 14</div>
+      </div>
+    </div>
+
+    <div class="title-section">
+      <h1 class="title">Website Desa Panambangan</h1>
+      <p class="subtitle">Universitas Muhammadiyah Cirebon</p>
+      <div class="merchant-id">ID : WEB14PANAMBANGAN</div>
+    </div>
+
+    <div class="qr-container">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https://web-artikel-panambangan.vercel.app/" alt="QR Code" class="qr-code">
+    </div>
+
+    <div class="footer-message">SATU QR UNTUK SEMUA</div>
+    <div class="footer-submessage">Cek aplikasi penyelenggara di:<br><strong>web-artikel-panambangan.vercel.app</strong></div>
+
+    <div class="bottom-left-info">
+      Dicetak oleh: KKM 14 UMC<br>
+      Versi cetak: 1.0.01.09.26
+    </div>
+
+    <div class="instructions">
+      <div class="instructions-title">Cara akses dengan QR:</div>
+      <div class="instruction-steps">
+        <div class="step">
+          <div class="step-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+          <div class="step-text">Buka Aplikasi Kamera / QR</div>
+        </div>
+        <div class="step">
+          <div class="step-icon"><i class="fa-solid fa-expand"></i></div>
+          <div class="step-text">Scan dan Cek Link</div>
+        </div>
+        <div class="step">
+          <div class="step-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="step-text">Kunjungi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
