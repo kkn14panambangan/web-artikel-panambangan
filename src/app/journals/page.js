@@ -39,7 +39,7 @@ export default async function JournalsPage() {
               </div>
             </div>
             <div style={{ marginTop: 'auto' }}>
-              <a href={journal.pdf_url} target="_blank" rel="noopener noreferrer" className="btn" style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
+              <a href={`${journal.pdf_url}?download=`} download className="btn" style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
                 <i className="fa-solid fa-download"></i> Unduh Dokumen
               </a>
             </div>
