@@ -78,7 +78,7 @@ export default function UploadPage() {
   };
 
   return (
-    <div className="fade-in">
+    <div className="fade-in" style={{ maxWidth: '800px', margin: '0 auto' }}>
       <div className="section-header">
         <div className="section-line"></div>
         <h1 className="section-title">Upload Dokumen</h1>
