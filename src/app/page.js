@@ -30,25 +30,33 @@ export default async function Home() {
           </p>
         </div>
 
-        <div className="hero-map-container map-styled">
-          {/* Interactive Google Map */}
-          <iframe 
-            src="https://maps.google.com/maps?q=Desa+Panambangan,+Sedong,+Cirebon&t=m&z=14&output=embed"
-            width="100%" 
-            height="100%" 
-            style={{ border: 0, position: 'absolute', top: 0, left: 0, zIndex: 1 }} 
-            allowFullScreen="" 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-          
-          {/* Map Frame Overlay (Keeping Title only) */}
-          <div className="map-frame" style={{ pointerEvents: 'none' }}>
-            {/* Title */}
-            <div className="map-title-box">
-              <h3>PETA DESA PANAMBANGAN</h3>
-              <p>Kecamatan Sedong, Kab. Cirebon</p>
+        <div className="custom-map-board">
+          <div className="map-board-main">
+            <h3 className="map-board-title">PETA DESA PANAMBANGAN</h3>
+            
+            <div className="map-board-compass">
+              <span className="compass-u">U</span>
+              <i className="fa-solid fa-caret-up"></i>
             </div>
+            
+            <img src="/qgis-map.png" alt="Peta Desa Panambangan" className="map-board-img" />
+            
+            <div className="map-board-scale">
+              <div className="scale-line"></div>
+              <span>500 m</span>
+            </div>
+          </div>
+          
+          <div className="map-board-sidebar">
+            <ul className="sidebar-legend-list">
+              <li><span className="legend-color legend-green"></span> Areal Pertanian</li>
+              <li><span className="legend-color legend-yellow"></span> Areal Perkebunan</li>
+              <li><span className="legend-color legend-red"></span> Daerah Penduduk</li>
+              <li><span className="legend-line border-line"></span> Batas Desa</li>
+              <li><span className="legend-icon"><i className="fa-solid fa-location-dot"></i></span> Fasilitas</li>
+              <li><span className="legend-line river-line"></span> Sungai</li>
+              <li><span className="legend-line road-line"></span> Jalan Raya</li>
+            </ul>
           </div>
         </div>
       </div>
