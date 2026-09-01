@@ -47,8 +47,11 @@ export default async function Home() {
             </div>
             
             {/* Compass */}
-            <div className="map-compass">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Compass_rose_pale.svg" alt="U" />
+            <div className="map-compass" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ position: 'relative', textAlign: 'center' }}>
+                <span style={{ fontSize: '10px', fontWeight: 'bold', display: 'block', marginBottom: '-2px' }}>U</span>
+                <i className="fa-solid fa-caret-up" style={{ fontSize: '20px', color: '#ef4444' }}></i>
+              </div>
             </div>
             
             {/* Legend */}
