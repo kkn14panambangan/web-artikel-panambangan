@@ -31,6 +31,10 @@
   padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-inter);
   background-color: var(--bg-color);
@@ -804,6 +808,10 @@ div[id*="netlify-badge"] {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+
   .mobile-only {
     display: block;
   }
