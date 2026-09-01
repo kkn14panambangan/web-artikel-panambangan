@@ -260,7 +260,12 @@
   }
 
   @media print {
-    body { background: white; padding: 0; margin: 0; }
+    body { 
+      background: white; 
+      padding: 0; 
+      margin: 0; 
+      min-height: auto; /* Fixes second blank page */
+    }
     
     .poster {
       box-shadow: none;
