@@ -31,45 +31,23 @@ export default async function Home() {
         </div>
 
         <div className="hero-map-container map-styled">
-          {/* Base Map Image */}
-          <img 
-            src="/qgis-map.png" 
-            alt="Peta Desa Panambangan" 
-            className="map-base-img"
-          />
+          {/* Interactive Google Map */}
+          <iframe 
+            src="https://maps.google.com/maps?q=Desa+Panambangan,+Sedong,+Cirebon&t=m&z=14&output=embed"
+            width="100%" 
+            height="100%" 
+            style={{ border: 0, position: 'absolute', top: 0, left: 0, zIndex: 1 }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
           
-          {/* Map Frame Overlay */}
-          <div className="map-frame">
+          {/* Map Frame Overlay (Keeping Title only) */}
+          <div className="map-frame" style={{ pointerEvents: 'none' }}>
             {/* Title */}
             <div className="map-title-box">
               <h3>PETA DESA PANAMBANGAN</h3>
               <p>Kecamatan Sedong, Kab. Cirebon</p>
-            </div>
-            
-            {/* Compass */}
-            <div className="map-compass" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{ position: 'relative', textAlign: 'center' }}>
-                <span style={{ fontSize: '10px', fontWeight: 'bold', display: 'block', marginBottom: '-2px' }}>U</span>
-                <i className="fa-solid fa-caret-up" style={{ fontSize: '20px', color: '#ef4444' }}></i>
-              </div>
-            </div>
-            
-            {/* Legend */}
-            <div className="map-legend">
-              <h4>LEGENDA</h4>
-              <ul className="legend-list">
-                <li><span className="legend-color legend-red"></span> Pemukiman</li>
-                <li><span className="legend-color legend-green"></span> Pertanian/Hutan</li>
-                <li><span className="legend-color legend-yellow"></span> Perkebunan</li>
-                <li><span className="legend-line border-line"></span> Batas Desa</li>
-                <li><span className="legend-icon"><i className="fa-solid fa-location-dot"></i></span> Fasilitas</li>
-              </ul>
-            </div>
-            
-            {/* Scale */}
-            <div className="map-scale">
-              <div className="scale-bar"></div>
-              <span>500 m</span>
             </div>
           </div>
         </div>
