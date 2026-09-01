@@ -28,6 +28,14 @@ export default async function Home() {
           <p style={{ maxWidth: '600px', fontSize: 'clamp(15px, 1.8vw, 18px)', lineHeight: 1.6, opacity: 0.9, textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>
             Mari kita wujudkan Desa Panambangan menjadi Desa yang mandiri dan berwawasan lingkungan melalui aksi nyata berkelanjutan.
           </p>
+          <div style={{ marginTop: '30px', display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+            <a href="/poster-qr.html" target="_blank" className="btn" style={{ background: '#10b981', color: 'white', border: 'none', boxShadow: '0 4px 15px rgba(16, 185, 129, 0.4)' }}>
+              <i className="fa-solid fa-qrcode"></i> Cetak Poster QR
+            </a>
+            <Link href="/articles" className="btn" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+              Baca Artikel
+            </Link>
+          </div>
         </div>
 
         <div className="custom-map-board">
