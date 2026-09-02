@@ -299,9 +299,9 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <h1 class="title">Website Desa Panambangan</h1>
+            <h1 class="title" id="posterTitle">Panduan Budidaya Tomat</h1>
             <p class="subtitle">Universitas Muhammadiyah Cirebon</p>
-            <p class="id-text">ID : WEB14PANAMBANGAN</p>
+            <p class="id-text" id="posterId">ID : ARTIKEL-TOMAT</p>
 
             <div class="qr-wrapper">
                 <!-- Gunakan parameter ?data= di URL untuk mengubah isi QR Code -->
@@ -312,9 +312,9 @@
         <!-- Bottom Section -->
         <footer class="bottom-section">
             <div class="info-left">
-                <h2 class="tagline">SATU QR UNTUK SEMUA</h2>
+                <h2 class="tagline" id="posterTagline">SCAN UNTUK BACA ARTIKEL</h2>
                 <p class="desc">
-                    Cek artikel dan progres UMKM di:<br>
+                    Baca panduan lengkapnya di:<br>
                     <strong>web-artikel-panambangan.vercel.app</strong>
                 </p>
                 <div class="meta">
@@ -356,6 +356,11 @@
         const customUrl = urlParams.get('url');
         if (customUrl) {
             document.getElementById('qrImage').src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent(customUrl);
+        }
+        
+        const customTitle = urlParams.get('title');
+        if (customTitle) {
+            document.getElementById('posterTitle').textContent = customTitle;
         }
     </script>
 </body>
