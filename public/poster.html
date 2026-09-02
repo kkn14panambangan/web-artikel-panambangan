@@ -253,14 +253,22 @@
 
         /* Print Media Query */
         @media print {
+            @page {
+                margin: 0;
+            }
             body {
                 background: white;
                 margin: 0;
                 padding: 0;
+                display: block;
             }
             .poster-container {
                 box-shadow: none;
                 page-break-after: avoid;
+                width: 105mm !important;
+                height: 148.5mm !important;
+                margin: 20mm auto;
+                position: relative;
             }
             /* To ensure background colors are printed */
             * {
